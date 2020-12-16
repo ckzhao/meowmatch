@@ -8,18 +8,36 @@
 <body>
 Find the meow of your dreams!
     <form action="gresponse" method="get">
-        <label for="username">Please enter a name:</label>
-        <input type="text" id="username" name="username" />
+        Choose an age
         <br/>
-        <input type="checkbox" name="greet_type" value="hello" id="hello" />
-        <label for="hello">kitten</label>
+        <input type="checkbox" name="age_baby" value="true" id="baby" />
+        <label for="age">baby</label>
         <br/>
-        <input type="checkbox" name="greet_type" value="birthday" id="birthday">
-        <label for="birthday">adult</label>
+        <input type="checkbox" name="age_young" value="true" id="young" />
+        <label for="age">young</label>
         <br/>
-        <input type="checkbox" name="greet_type" value="birthday" id="birthday">
-        <label for="birthday">senior</label>
+        <input type="checkbox" name="age_adult" value="true" id="adult">
+        <label for="age">adult</label>
+        <br/>
+        <input type="checkbox" name="age_senior" value="true" id="senior">
+        <label for="age">senior</label>
+        <br/>
+        Choose a gender
+        <br/>
+        <input type="checkbox" name="gender_male" value="true" id="male" />
+        <label for="gender">male</label>
+        <br/>
+        <input type="checkbox" name="gender_female" value="true" id="female" />
+        <label for="gender">female</label>
+        <br/>
+        <label for="location">What is your zip code?</label>
+        <input type="text" id="zipcode" name="location" value="enter zip code"
+        <br/>
+        <label for="distance">How far are you willing to travel?</label>
+        <input type="text" id="distance" name="distance" value="enter in miles (max:500 mi)"
+        <br/>
         <input type="submit" value="Go" name="gobtn" />
+
     </form>
 </body>
 

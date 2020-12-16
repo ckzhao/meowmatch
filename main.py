@@ -1,5 +1,5 @@
 import urllib.request, urllib.error, urllib.parse, json, webbrowser
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 def pretty(obj):
     return json.dumps(obj, sort_keys=True, indent=2)
@@ -38,17 +38,51 @@ def geturl(url):
 result = geturl("https://api.petfinder.com/v2/oauth2/token")
 token = result['access_token']
 
-def getresult(token):
+params={}
+
+def getresult(token, params):
+    result = urllib.parse.urlencode({'type': 'cat', 'limit': 10})
+    data = {}
+    genders = []
+    ages = []
+    for i in params:
+        if i == "gender_female":
+            genders.append('female')
+        elif i == "gender_male":
+            genders.append('male')
+        if i == "age_baby":
+            ages.append('baby')
+        elif i == "age_young":
+            ages.append('young')
+        elif i == "age_adult":
+            ages.append('adult')
+        elif i == "age_senior":
+            ages.append('senior')
+
+
+        # result = result + "&" + i + ":" + data[i]
+
+
+    if len(genders) > 0:
+        data_string = "gender=" + ",".join(genders)
+    if len(ages) > 0:
+        data_string += "&age=" + ",".join(ages)
+    print(data_string)
+
+
     req = urllib.request.Request(
-        url="https://api.petfinder.com/v2/animals?type=cat&limit=10",  # The url you wanna get
+        url="https://api.petfinder.com/v2/animals?" + data_string,  # The url you wanna get
         headers={"Authorization": "Bearer " + token}, # The headers you want
     )
     result = safe_get(req)
     if result is not None:
         return json.load(result)
 
-token_result = getresult(token)
-import pdb; pdb.set_trace()
+
+@app.route("/gresponse")
+def greet_response_handler():
+    print(getresult(token, request.args))
+    return "poopoo juju"
 
 @app.route('/meow_matches')
 def meow():
