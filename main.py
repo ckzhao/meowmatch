@@ -145,8 +145,8 @@ def getlove(params, names):
         current_name = current_name.replace(",", "")
         conn = http.client.HTTPSConnection("love-calculator.p.rapidapi.com")
         headers = {
-            'api_key': "c1858c8c2emsh6cecb4e9b7f8a5fp10d437jsn3b4fe1fab958",
-            'api_host': "love-calculator.p.rapidapi.com"}
+            "x-rapidapi-key": "c1858c8c2emsh6cecb4e9b7f8a5fp10d437jsn3b4fe1fab958",
+	        "x-rapidapi-host": "love-calculator.p.rapidapi.com"}
         conn.request("GET", "/getPercentage?fname=" + str(username) + "&sname=" + current_name, headers=headers)
         loveresult = conn.getresponse()
         data = loveresult.read()
