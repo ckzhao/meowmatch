@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Meow Matches</title>
+    <style>
+			div.container {
+				display: inline-block;
+			}
+		body{font-family:Helvetica,Arial,sans-serif;font-size:0.8em;}
+		format {
+			background-color: lightsteelblue;
+		}
+	</style>
+</head>
+
+<body>
+<h1>Meow Matches</h1>
+
+	 {% for result in results_dict %}
+         <img src={{results_dict[result]["photos"]}} width=150 height=150 alt={{key}}/>
+         <br>
+        {{results_dict[result]["name"]}}
+         <br>
+         {{results_dict[result]["gender"]}}
+         <br>
+         {{results_dict[result]["age"]}}
+         <br>
+         <a href={{results_dict[result]["url"]}}>View Listing </a>
+         <br>
+         {{results_dict[result]["description"]}}
+         <br>
+         {{results_dict[result]["distance"]}}
+         <br>
+         <br>
+         <br>
+
+   {% endfor %}
+    </div>
+    </div>
+</body></html>

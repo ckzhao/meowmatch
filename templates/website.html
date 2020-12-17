@@ -6,9 +6,29 @@
 </head>
 
 <body>
-Find the meow of your dreams!
+Find your purrfect match!<br/>
+<br/>
     <form action="gresponse" method="get">
-        Choose an age
+        <label for="location">What is your zip code?</label>
+        <input type="text" id="zipcode" name="location" value=""
+        <br/>
+        <br/>
+        <label for="distance">How far are you willing to travel? (in miles)</label>
+        <input type="text" id="distance" name="distance" value=""
+        <br/>
+        <br/>
+        <br/>
+        <br/>
+        If you would like random results check the following!
+        <br/>
+        <input type="checkbox" name="surprise_me" value="true" id="surprise" />
+        <label for="surprise">Suprise Me!</label>
+        <br/>
+        <br/>
+        If not, fill out the following form
+        <br/>
+        <br/>
+        Choose the age(s):
         <br/>
         <input type="checkbox" name="age_baby" value="true" id="baby" />
         <label for="age">baby</label>
@@ -22,7 +42,8 @@ Find the meow of your dreams!
         <input type="checkbox" name="age_senior" value="true" id="senior">
         <label for="age">senior</label>
         <br/>
-        Choose a gender
+        <br/>
+        Choose the gender(s):
         <br/>
         <input type="checkbox" name="gender_male" value="true" id="male" />
         <label for="gender">male</label>
@@ -30,11 +51,18 @@ Find the meow of your dreams!
         <input type="checkbox" name="gender_female" value="true" id="female" />
         <label for="gender">female</label>
         <br/>
-        <label for="location">What is your zip code?</label>
-        <input type="text" id="zipcode" name="location" value="enter zip code"
         <br/>
-        <label for="distance">How far are you willing to travel?</label>
-        <input type="text" id="distance" name="distance" value="enter in miles (max:500 mi)"
+        Special characteristics (optional):
+        <br/>
+        <input type="checkbox" name="good_with_children" value="true" id="children" />
+        <label for="children">Good with children</label>
+        <br/>
+        <input type="checkbox" name="good_with_cats" value="true" id="cats" />
+        <label for="cats">Good with other cats</label>
+        <br/>
+        <input type="checkbox" name="good_with_dogs" value="true" id="dogs" />
+        <label for="cats">Good with dogs</label>
+        <br/>
         <br/>
         <input type="submit" value="Go" name="gobtn" />
 
