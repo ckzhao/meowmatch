@@ -16,7 +16,6 @@
 
 <body>
 <h1>Meow Matches</h1>
-
 	 {% for result in results_dict %}
          <img src={{results_dict[result]["photos"]}} width=150 height=150 alt={{key}}/>
          <br>
@@ -31,6 +30,14 @@
          {{results_dict[result]["description"]}}
          <br>
          {{results_dict[result]["distance"]}}
+         <br>
+         <br>
+         <br>
+         {{love_data[results_dict[result]["name"]]["percentage"]}}
+         <br>
+         {{love_data[results_dict[result]["name"]]["result"]}}
+         <br>
+         <br>
          <br>
          <br>
          <br>
